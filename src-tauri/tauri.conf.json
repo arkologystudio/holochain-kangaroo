@@ -6,8 +6,8 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "replace-me",
-    "version": "0.0.0"
+    "productName": "san001",
+    "version": "0.0.11"
   },
   "tauri": {
     "allowlist": {
@@ -21,7 +21,7 @@
       }
     },
     "cli": {
-      "description": "Running replace-me from the command line",
+      "description": "Running SAN from the command line",
       "args": [
         {
           "name": "profile",
@@ -36,7 +36,7 @@
     "bundle": {
       "active": true,
       "targets": "all",
-      "identifier": "replace-me.with-unique-identifier.in-reverse-domain-notation",
+      "identifier": "SAN-0.0.1.with-unique-identifier.in-reverse-domain-notation",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
