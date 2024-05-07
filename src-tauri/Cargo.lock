@@ -13,37 +13,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "SAN001"
-version = "0.0.11"
-dependencies = [
- "either",
- "futures",
- "holochain",
- "holochain_client",
- "holochain_keystore",
- "holochain_types",
- "holochain_zome_types",
- "log",
- "log4rs",
- "mr_bundle",
- "nanoid 0.4.0",
- "opener",
- "portpicker",
- "semver 1.0.19",
- "serde",
- "serde_json",
- "serde_yaml 0.8.26",
- "sodoken",
- "symlink",
- "tauri",
- "tauri-build",
- "tauri-plugin-single-instance",
- "thiserror",
- "url 2.4.1",
- "url2",
-]
-
-[[package]]
 name = "addr2line"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -7210,6 +7179,37 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
 dependencies = [
  "winapi-util",
+]
+
+[[package]]
+name = "san001"
+version = "0.0.11"
+dependencies = [
+ "either",
+ "futures",
+ "holochain",
+ "holochain_client",
+ "holochain_keystore",
+ "holochain_types",
+ "holochain_zome_types",
+ "log",
+ "log4rs",
+ "mr_bundle",
+ "nanoid 0.4.0",
+ "opener",
+ "portpicker",
+ "semver 1.0.19",
+ "serde",
+ "serde_json",
+ "serde_yaml 0.8.26",
+ "sodoken",
+ "symlink",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-single-instance",
+ "thiserror",
+ "url 2.4.1",
+ "url2",
 ]
 
 [[package]]

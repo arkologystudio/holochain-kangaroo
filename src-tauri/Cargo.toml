@@ -1,5 +1,5 @@
 [package]
-name = "SAN001" # replace-me
+name = "san001" # replace-me
 version = "0.0.11" # replace-me -- Choose wisely, see "Note on Versioning" in README
 description = "A Tauri App"
 authors = ["Arkology Studio"]
