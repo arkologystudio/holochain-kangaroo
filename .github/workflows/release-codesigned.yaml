@@ -103,7 +103,7 @@ jobs:
 
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
-          releaseName: "replace-me v__VERSION__"
+          releaseName: "data-commons-mvp 0.0.1"
           releaseBody: "See assets below to download and install this version."
           releaseDraft: true
           prerelease: true
@@ -169,7 +169,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
-          releaseName: "replace-me v__VERSION__"
+          releaseName: "data-commons-mvp 0.0.1"
           releaseBody: "See assets below to download and install this version."
           releaseDraft: true
           prerelease: true
