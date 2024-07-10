@@ -30,7 +30,7 @@ jobs:
       - name: install Go stable
         uses: actions/setup-go@v4
         with:
-          go-version: 'stable'
+          go-version: "stable"
       - name: install app dependencies and info
         run: npm install && npm run tauri info
 
@@ -48,7 +48,6 @@ jobs:
           $HcPath = Get-Command holochain | Select-Object -ExpandProperty Definition
           Copy-Item $HcPath -Destination src-tauri/bins/holochain-v0.2.7-rc.1-x86_64-pc-windows-msvc.exe
 
-
       - name: setup binaries (macos only)
         if: matrix.platform == 'macos-11'
         run: |
@@ -61,7 +60,6 @@ jobs:
           cargo install holochain --version holochain-v0.2.7-rc.1 --locked --features sqlite-encrypted
           HOLOCHAIN_PATH=$(which holochain)
           cp $HOLOCHAIN_PATH src-tauri/bins/holochain-v0.2.7-rc.1-x86_64-apple-darwin
-
 
       - name: install dependencies (ubuntu only)
         if: matrix.platform == 'ubuntu-20.04'
@@ -81,7 +79,6 @@ jobs:
           cargo install holochain --version holochain-v0.2.7-rc.1 --locked --features sqlite-encrypted
           HOLOCHAIN_PATH=$(which holochain)
           cp $HOLOCHAIN_PATH src-tauri/bins/holochain-v0.2.7-rc.1-x86_64-unknown-linux-gnu
-
 
       - name: generate dist folder
         run: npm run dist
@@ -109,7 +106,6 @@ jobs:
           prerelease: true
           args: --verbose
 
-
       ### Everything below this line is code signing for Windows via azure key vault, following these instructions:
       ### https://melatonin.dev/blog/how-to-code-sign-windows-installers-with-an-ev-cert-on-github-actions/
       ### HELP Remove everything below if Windows code signing is NOT wanted.
@@ -122,7 +118,7 @@ jobs:
 
           dotnet tool install --global AzureSignTool
 
-          # replace-me -- HELP
+          # SAN-0.0.1 -- HELP
           # 1. replace all occurrences of [[GITHUB_REPO_NAME]] with the name you of your GitHub repository
           # 2. replace all occurrences of [[productName]] with the productName field in tauri.conf.json
           # 3. replace all occurrences of [[version]] with the version field in tauri.conf.json
@@ -160,7 +156,6 @@ jobs:
         env:
           TAURI_PRIVATE_KEY: ${{ secrets.TAURI_PRIVATE_KEY }}
           TAURI_KEY_PASSWORD: ${{ secrets.TAURI_KEY_PASSWORD }}
-
 
       - name: upload signed .msi, .msi.zip, .msi.zip.sig, .exe, .nsis.zip, .nsis.zip.sig files to github release (Windows only)
         uses: matthme/tauri-action-ev-signing@upload-only

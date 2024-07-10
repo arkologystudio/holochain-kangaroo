@@ -179,7 +179,7 @@ pub fn create_and_apply_lair_symlink(keystore_data_dir: PathBuf, ) -> AppResult<
     // overwrite connectionUrl in lair-keystore-config.yaml to symlink directory
     // 1. read to string
     let mut lair_config_string = std::fs::read_to_string(keystore_dir.join("lair-keystore-config.yaml"))
-        .map_err(|e| LairKeystoreError::ErrorCreatingSymLink((format!("Failed to read lair-keystore-config.yaml: {}", e))))?;
+        .map_err(|e| LairKeystoreError::ErrorCreatingSymLink(format!("Failed to read lair-keystore-config.yaml: {}", e)))?;
 
     // 2. filter out the line with the connectionUrl
     let connection_url_line = lair_config_string.lines().filter(|line| line.contains("connectionUrl:")).collect::<String>();
@@ -194,7 +194,7 @@ pub fn create_and_apply_lair_symlink(keystore_data_dir: PathBuf, ) -> AppResult<
         )) {
             Ok(url) => url,
             Err(e) => return Err(AppError::LairKeystoreError(
-                LairKeystoreError::ErrorCreatingSymLink((format!("Failed to parse URL for symlink lair path: {}", e))))
+                LairKeystoreError::ErrorCreatingSymLink(format!("Failed to parse URL for symlink lair path: {}", e)))
             ),
     };
 
@@ -212,7 +212,7 @@ pub fn create_and_apply_lair_symlink(keystore_data_dir: PathBuf, ) -> AppResult<
     // 5. Overwrite the lair-keystore-config.yaml with the modified content
     std::fs::write(keystore_dir.join("lair-keystore-config.yaml"), lair_config_string)
         .map_err(|e| AppError::LairKeystoreError(
-            LairKeystoreError::ErrorCreatingSymLink((format!("Failed to write lair-keystore-config.yaml after modification: {}", e)))
+            LairKeystoreError::ErrorCreatingSymLink(format!("Failed to write lair-keystore-config.yaml after modification: {}", e))
         ))
 }
 

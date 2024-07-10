@@ -2,7 +2,7 @@
 name = "data-commons-mvp" # replace-me
 version = "0.0.1" # replace-me -- Choose wisely, see "Note on Versioning" in README
 description = "A Tauri App"
-authors = ["you"]
+authors = ["Arkology Studio"]
 license = ""
 repository = ""
 edition = "2021"
